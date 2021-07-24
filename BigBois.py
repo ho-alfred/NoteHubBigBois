@@ -4,6 +4,8 @@ import logging
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove, Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, ConversationHandler, PicklePersistence
 
+token = ['Insert API key here']
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -55,7 +57,7 @@ def main():
     
     persist = PicklePersistence(filename='BigBoisdata')   
 
-    updater = Updater("1751164470:AAHDJpbqey_9HhJ7pkXJjlJODGHkUti5ddY", persistence=persist, use_context=True)
+    updater = Updater(token, persistence=persist, use_context=True)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
